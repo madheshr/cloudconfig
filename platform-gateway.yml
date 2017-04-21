@@ -1,0 +1,45 @@
+server.port: 8080
+spring:
+  application:
+    name: platform-gateway
+zuul:
+  routes:
+    psm:
+      path: /platform-services-manager/**
+      serviceId: psm
+      stripPrefix: false
+      sensitiveHeaders:
+    platform-home:
+      path: /platform-home/**
+      serviceId: ph
+      stripPrefix: false
+      sensitiveHeaders:
+    session:
+      path: /SessionTracker/**
+      serviceId: session
+      stripPrefix: false
+      sensitiveHeaders:
+psm:
+  ribbon:
+    listOfServers: localhost:9080
+session:
+  ribbon:
+    listOfServers: localhost:9080
+ph:
+  ribbon:
+    listOfServers: localhost:9080
+
+#Global Hystrix Settings
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+          
+#Global Ribbon Settings          
+ribbon:
+  ReadTimeout: 100000
+  ConnectTimeout: 100000
+  IsSecure: true
+
