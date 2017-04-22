@@ -20,6 +20,11 @@ zuul:
       serviceId: session
       stripPrefix: false
       sensitiveHeaders:
+   test :
+      path: /test/**
+      serviceId: session
+      stripPrefix: false
+      sensitiveHeaders:
 psm:
   ribbon:
     listOfServers: localhost:9080
