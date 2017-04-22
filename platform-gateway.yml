@@ -20,7 +20,7 @@ zuul:
       serviceId: session
       stripPrefix: false
       sensitiveHeaders:
-   test :
+    test:
       path: /test/**
       serviceId: session
       stripPrefix: false
