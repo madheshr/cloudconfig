@@ -21,7 +21,7 @@ zuul:
       stripPrefix: false
       sensitiveHeaders:
     test123:
-      path: /test/**
+      path: /tester/**
       serviceId: session
       stripPrefix: false
       sensitiveHeaders:
